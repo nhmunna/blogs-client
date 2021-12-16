@@ -6,6 +6,7 @@ import Login from './components/Login/Login';
 import MyBlogs from './components/MyBlogs/MyBlogs';
 import Navigation from './components/Navigation/Navigation';
 import Register from './components/Register/Register';
+import UserInfo from './components/UserInfo/UserInfo';
 import Write from './components/Write/Write';
 import AuthProvider from './context/AuthProvider';
 
@@ -22,6 +23,7 @@ function App() {
           <Route path="/myblogs" element={<MyBlogs></MyBlogs>}></Route>
           <Route path="/login" element={<Login></Login>}></Route>
           <Route path="/register" element={<Register></Register>}></Route>
+          <Route path="/userInfo" element={<UserInfo></UserInfo>}></Route>
         </Routes>
       </BrowserRouter>
     </AuthProvider>

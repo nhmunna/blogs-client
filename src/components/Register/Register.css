@@ -1,0 +1,7 @@
+.register {
+    height: calc(100vh - 50px);
+    background: url("../../images/registration.jpg");
+    background-size: cover;
+    font-family: 'Source Code Pro', monospace;
+    color: black;
+}

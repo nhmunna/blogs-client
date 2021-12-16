@@ -17,14 +17,14 @@ const Navigation = () => {
                         <Nav.Link as={Link} to="/blogs">Blogs</Nav.Link>
 
                         {user?.email ?
-                            <div>
+                            <>
                                 <Nav.Link as={Link} to="/write">Write</Nav.Link>
                                 <Nav.Link as={Link} to="/myblogs">My Blogs</Nav.Link>
-                                <Navbar.Text>
-                                    Signed in as: <p>{user?.displayName}</p>
-                                </Navbar.Text>
+                                <Nav.Link as={Link} to="/userInfo">
+                                    Signed in as: {user?.displayName}
+                                </Nav.Link>
                                 <Button onClick={logOut} variant="light">Logout</Button>
-                            </div> :
+                            </> :
                             <Nav.Link as={Link} to="/login">Login</Nav.Link>}
 
                     </Navbar.Collapse>

@@ -13,7 +13,7 @@ const useFirebase = () => {
     const googleProvider = new GoogleAuthProvider();
 
     //Email and Password 
-    const registerUser = (email, password, name, history) => {
+    const registerUser = (email, password, name, navigate) => {
         setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
@@ -35,7 +35,7 @@ const useFirebase = () => {
                     // An error occurred
                     // ...
                 });
-                history.replace('/');
+                navigate('/');
                 setAuthError('');
             })
             .catch((error) => {
@@ -47,7 +47,7 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
     }
 
-    const loginUser = (email, password, location, history) => {
+    const loginUser = (email, password, location, navigate) => {
         setIsLoading(true);
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
@@ -55,7 +55,7 @@ const useFirebase = () => {
                 const user = userCredential.user;
                 // ...
                 const destination = location?.state?.from || '/';
-                history.replace(destination);
+                navigate(destination);
                 setAuthError('');
             })
             .catch((error) => {
@@ -67,7 +67,7 @@ const useFirebase = () => {
     }
 
     //google signin with popup
-    const signInWithGoogle = (location, history) => {
+    const signInWithGoogle = (location, navigate) => {
         setIsLoading(true);
         signInWithPopup(auth, googleProvider)
             .then((result) => {
@@ -80,7 +80,7 @@ const useFirebase = () => {
                 // setUser(user);
                 // ...
                 const destination = location?.state?.from || '/';
-                history.replace(destination);
+                navigate(destination);
                 saveUser(user.email, user.displayName, 'PUT');
                 setAuthError('');
             }).catch((error) => {

@@ -1,0 +1,6 @@
+.login {
+    height: calc(100vh - 50px);
+    background: url("../../images/login.jpg");
+    background-size: cover;
+    font-family: 'Source Code Pro', monospace;
+}
