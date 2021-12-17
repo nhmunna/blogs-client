@@ -1,20 +1,34 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import Blog from '../Blog/Blog';
 import SideBar from '../SideBar/SideBar';
 
 const Blogs = () => {
+    const [blogs, setBlogs] = useState([]);
+    useEffect(() => {
+        fetch('http://localhost:5000/blogs')
+            .then(res => res.json())
+            .then(data => setBlogs(data));
+    }, [])
     return (
         <div>
-            <div class="container px-4 mt-5">
-                <div class="row gx-5">
-                    <div class="col-lg-10">
-                        <div>blogs part</div>
+            <div class="container px-4 mt-5 d-flex flex-row">
+                <div class="row g-5">
+                    <div className="col-lg-10">
+                        <div className="d-flex flex-grow-2">
+                            {
+                                blogs.map(blog => <Blog
+                                    key={blog._id}
+                                    blog={blog}
+                                ></Blog>)
+                            }
+                        </div>
                     </div>
-                    <div class="col-lg-2">
+                    <div className="col-lg-2">
                         <SideBar></SideBar>
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 
