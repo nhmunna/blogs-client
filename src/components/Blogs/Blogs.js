@@ -13,8 +13,8 @@ const Blogs = () => {
         <div>
             <div class="container px-4 mt-5 d-flex flex-row">
                 <div class="row g-5">
-                    <div className="col-lg-10">
-                        <div className="d-flex flex-grow-2">
+                    <div className="col-lg-10 col-sm-12">
+                        <div className="d-flex flex-grow-1 flex-wrap">
                             {
                                 blogs.map(blog => <Blog
                                     key={blog._id}
