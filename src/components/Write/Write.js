@@ -49,10 +49,6 @@ const Write = () => {
     return (
         <div className='d-flex flex-column justify-content-center align-items-center w-100'>
             <form onSubmit={handleSubmit}>
-                {/* <div className="mb-3">
-                    <label for="exampleInputUserName" className="form-label">Email</label>
-                    <input onChange={e => setEmail(e.target.value)} value={user.email} name="title" type="text" className="form-control" id="exampleInputUserName" />
-                </div> */}
                 <div className="mb-3">
                     <label for="exampleInputUserName" className="form-label">Time</label>
                     <input onChange={e => setTime(e.target.value)} value={Date().toLocaleString()} name="title" type="text" className="form-control" id="exampleInputUserName" disable />
