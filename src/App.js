@@ -22,11 +22,11 @@ function App() {
           <Route path="/" element={<Home></Home>}></Route>
           <Route path="/home" element={<Home></Home>}></Route>
           <Route path="/blogs" element={<Blogs></Blogs>}></Route>
-          <PrivateRoute path="/write" element={<Write></Write>}></PrivateRoute>
-          <PrivateRoute path="/myblogs" element={<MyBlogs></MyBlogs>}></PrivateRoute>
+          <Route path="/write" element={<PrivateRoute><Write></Write></PrivateRoute>}></Route>
+          <Route path="/myblogs" element={<PrivateRoute><MyBlogs></MyBlogs></PrivateRoute>}></Route>
           <Route path="/login" element={<Login></Login>}></Route>
           <Route path="/register" element={<Register></Register>}></Route>
-          <PrivateRoute path="/userInfo" element={<UserInfo></UserInfo>}></PrivateRoute>
+          <Route path="/userInfo" element={<PrivateRoute><UserInfo></UserInfo></PrivateRoute>}></Route>
           <Route path="/singleBlog/:blogId" element={<SingleBlog></SingleBlog>}></Route>
           <Route path="*" element={<NotFound></NotFound>}></Route>
         </Routes>
