@@ -20,7 +20,7 @@ const SingleBlog = () => {
                 <h3 className="title">{title}</h3>
                 <div className="info d-flex justify-content-between">
                     <h5>{writer}</h5>
-                    <h5>{time}</h5>
+                    <h5 className='time'>{time}</h5>
                 </div>
                 <p className="px-3 details" >{description}</p>
             </div>
