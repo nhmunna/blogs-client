@@ -1,0 +1,17 @@
+.footer {
+    margin-top: 40px;
+}
+
+.footer-heading {
+    font-size: 25px;
+    font-family: 'Corinthia', cursive;
+}
+
+.social-icons {
+    margin-top: -15px;
+}
+
+.social-icons a i {
+    width: 5px;
+    color: black;
+}

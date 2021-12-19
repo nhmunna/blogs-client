@@ -1,0 +1,17 @@
+.img {
+    width: 300px;
+    height: 300px;
+}
+
+.user-name {
+    font-family: 'Varela Round', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.user-details {
+    font-family: 'Lora', serif;
+    color: gray;
+    text-align: justify;
+    text-justify: inter-word;
+}

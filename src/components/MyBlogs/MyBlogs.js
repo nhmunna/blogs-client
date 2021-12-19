@@ -13,19 +13,39 @@ const MyBlogs = () => {
             .then(data =>
                 setMyBlog(data))
     }, [])
+
+    const handleDelete = id => {
+        const proceed = window.confirm("Are You Sure To Delete?");
+        if (proceed) {
+            const url = `http://localhost:5000/blogs/${id}`;
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.deletedCount > 0) {
+                        // setOrderDelete(true);
+                        window.alert('Your blog has been deleted.')
+                        const remainingMyBlog = myBlog.filter(blog => blog._id !== id);
+                        setMyBlog(remainingMyBlog);
+                    }
+                })
+        }
+    }
+
     return (
         <div>
             <div class="container px-4 mt-5 d-flex flex-row">
                 <div class="row g-5">
-                    <div className="col-lg-12 col-sm-12">
-                        <div className="d-flex flex-grow-1 flex-wrap">
-                            {
-                                myBlog.map(blog => <MyBlog
-                                    key={blog._id}
-                                    blog={blog}
-                                ></MyBlog>)
-                            }
-                        </div>
+                    <div className="d-flex flex-wrap">
+                        {
+                            myBlog.map(blog => <MyBlog
+                                key={blog._id}
+                                blog={blog}
+                                handleDelete={handleDelete}
+                            ></MyBlog>)
+                        }
                     </div>
                 </div>
             </div>

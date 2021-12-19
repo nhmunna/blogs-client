@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Blog from '../Blog/Blog';
 import SideBar from '../SideBar/SideBar';
+import './Blogs.css';
 
 const Blogs = () => {
     const [blogs, setBlogs] = useState([]);
@@ -11,6 +12,7 @@ const Blogs = () => {
     }, [])
     return (
         <div>
+            <h3 className="heading">Blogs</h3>
             <div class="container px-4 mt-5 d-flex flex-row">
                 <div class="row g-5">
                     <div className="col-lg-9 col-sm-12">

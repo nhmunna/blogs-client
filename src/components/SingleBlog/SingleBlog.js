@@ -17,12 +17,12 @@ const SingleBlog = () => {
         <div className="blog shadow rounded-3">
             <div>
                 <img className="img-fluid" src={`data:image/png;base64,${img}`} alt="" />
-                <h3 className="text-success">{title}</h3>
+                <h3 className="title">{title}</h3>
                 <div className="info d-flex justify-content-between">
                     <h5>{writer}</h5>
                     <h5>{time}</h5>
                 </div>
-                <p className="px-3" >{description}</p>
+                <p className="px-3 details" >{description}</p>
             </div>
         </div>
     );

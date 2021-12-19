@@ -3,15 +3,15 @@ import useAuth from '../../hooks/useAuth';
 
 const Write = () => {
     const { user } = useAuth()
-    // const time = Date().toLocaleString();
+
     const [time, setTime] = React.useState(new Date());
     const [title, setTitle] = useState('');
     const [writer, setWriter] = useState('');
-    // const [email, setEmail] = useState(user.email);
+
     const email = user.email;
     const [blog, setBlog] = useState('');
     const [image, setImage] = useState(null);
-    // const [success, setSuccess] = useState(false);
+
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -33,10 +33,7 @@ const Write = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.insertedId) {
-                    // setSuccess('Blog added successfully');
-                    <div class="alert alert-success" role="alert">
-                        Successfully submit your Blog.
-                    </div>
+                    window.alert('Blog added successfully')
                 }
 
             })
@@ -71,7 +68,7 @@ const Write = () => {
                 </div>
                 <button type="submit" className="btn btn-dark text-white w-100 px-5 my-2 text-center">Upload</button>
             </form>
-            {/* {success && <p className="text-success">{success}</p>} */}
+
         </div>
     );
 };
