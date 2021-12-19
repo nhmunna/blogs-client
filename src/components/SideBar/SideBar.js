@@ -22,7 +22,7 @@ const SideBar = () => {
             <h5 className='heading'>About Me</h5>
             {
                 user.email ?
-                    userInfo.map(user => (<div className="w-100 m-2 shadow-sm p-2 rounded-3 user">
+                    userInfo.map(user => (<div key={user._id} className="w-100 m-2 shadow-sm p-2 rounded-3 user">
                         <img className="img-fluid img" src={`data:image/png;base64,${user.img}`} alt="" />
                         <h3 className="user-name">{user.name}</h3>
                         <p className="px-3 user-details" >{user.about}</p>
