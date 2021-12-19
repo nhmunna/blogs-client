@@ -24,7 +24,7 @@ const UserInfo = () => {
         formData.append('email', email);
         formData.append('img', image);
 
-        fetch('http://localhost:5000/userInfo', {
+        fetch('https://evening-brushlands-73529.herokuapp.com/userInfo', {
             method: 'POST',
             body: formData
         })
@@ -47,23 +47,23 @@ const UserInfo = () => {
     }
     return (
         <div className='d-flex flex-column justify-content-center align-items-center w-100'>
-        <form onSubmit={handleSubmit}>
-            <div className="mb-3">
-                <label for="exampleInputUserName" className="form-label">Name</label>
-                <input onChange={e => setName(e.target.value)} name="title" type="text" className="form-control" id="exampleInputUserName" />
-            </div>
-            <div className="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">About</label>
-                <textarea onChange={e => setAbout(e.target.value)} class="form-control" name="blog" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
-            <div className="mb-3">
-                <label for="formFileMultiple" class="form-label">File</label>
-                <input onChange={e => setImage(e.target.files[0])} class="form-control" type="file" id="formFileMultiple" multiple />
-            </div>
-            <button type="submit" className="btn btn-dark text-white w-100 px-5 my-2 text-center">Upload</button>
-        </form>
-        {success && <p className="text-success">{success}</p>}
-    </div>
+            <form onSubmit={handleSubmit}>
+                <div className="mb-3">
+                    <label for="exampleInputUserName" className="form-label">Name</label>
+                    <input onChange={e => setName(e.target.value)} name="title" type="text" className="form-control" id="exampleInputUserName" />
+                </div>
+                <div className="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">About</label>
+                    <textarea onChange={e => setAbout(e.target.value)} class="form-control" name="blog" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <div className="mb-3">
+                    <label for="formFileMultiple" class="form-label">File</label>
+                    <input onChange={e => setImage(e.target.files[0])} class="form-control" type="file" id="formFileMultiple" multiple />
+                </div>
+                <button type="submit" className="btn btn-dark text-white w-100 px-5 my-2 text-center">Upload</button>
+            </form>
+            {success && <p className="text-success">{success}</p>}
+        </div>
     );
 };
 

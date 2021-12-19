@@ -9,7 +9,7 @@ const SideBar = () => {
 
 
     useEffect(() => {
-        const url = `http://localhost:5000/userInfo?email=${user.email}`;
+        const url = `https://evening-brushlands-73529.herokuapp.com/userInfo?email=${user.email}`;
         fetch(url)
             .then(res => res.json())
             .then(data =>

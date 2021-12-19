@@ -7,7 +7,7 @@ const MyBlogs = () => {
     const [myBlog, setMyBlog] = useState([]);
 
     useEffect(() => {
-        const url = `http://localhost:5000/blogs?email=${user.email}`;
+        const url = `https://evening-brushlands-73529.herokuapp.com/blogs?email=${user.email}`;
         fetch(url)
             .then(res => res.json())
             .then(data =>
@@ -17,7 +17,7 @@ const MyBlogs = () => {
     const handleDelete = id => {
         const proceed = window.confirm("Are You Sure To Delete?");
         if (proceed) {
-            const url = `http://localhost:5000/blogs/${id}`;
+            const url = `https://evening-brushlands-73529.herokuapp.com/blogs/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

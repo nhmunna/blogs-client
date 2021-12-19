@@ -26,7 +26,7 @@ const Write = () => {
         formData.append('email', email);
         formData.append('img', image);
 
-        fetch('http://localhost:5000/blogs', {
+        fetch('https://evening-brushlands-73529.herokuapp.com/blogs', {
             method: 'POST',
             body: formData
         })

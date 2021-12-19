@@ -8,7 +8,7 @@ const SingleBlog = () => {
     const { img, title, writer, description, time } = blog;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/blogs/${blogId}`)
+        fetch(`https://evening-brushlands-73529.herokuapp.com/blogs/${blogId}`)
             .then(res => res.json())
             .then(data => setBlog(data));
     }, [])
