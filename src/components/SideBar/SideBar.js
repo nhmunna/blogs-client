@@ -15,7 +15,7 @@ const SideBar = () => {
             .then(res => res.json())
             .then(data =>
                 setUserInfo(data))
-    }, [])
+    }, [user.email])
 
     return (
         <div>

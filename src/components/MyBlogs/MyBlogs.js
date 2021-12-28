@@ -12,7 +12,7 @@ const MyBlogs = () => {
             .then(res => res.json())
             .then(data =>
                 setMyBlog(data))
-    }, [])
+    }, [user.email])
 
     const handleDelete = id => {
         const proceed = window.confirm("Are You Sure To Delete?");

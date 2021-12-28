@@ -11,7 +11,7 @@ const SingleBlog = () => {
         fetch(`https://evening-brushlands-73529.herokuapp.com/blogs/${blogId}`)
             .then(res => res.json())
             .then(data => setBlog(data));
-    }, [])
+    }, [blogId])
 
     return (
         <div className="blog shadow rounded-3">
